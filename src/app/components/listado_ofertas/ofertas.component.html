@@ -1,0 +1,48 @@
+<h1>Listado de Ofertas Laborales</h1>
+
+<div>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+        <div class="row mb-4">
+            <div class="col">
+                <div class="form-outline">
+                    <input type="text" id="cargo" formControlName="cargo" class="form-control" required />
+                    <label class="form-label" for="cargo">Cargo</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col">
+                <div class="form-outline">
+                    <input type="text" id="tipo" formControlName="tipo" class="form-control" required />
+                    <label class="form-label" for="tipo">Tipo Jornada</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="row mb-4">
+            <div class="col">
+                <div class="form-outline">
+                    <input type="text" id="tema" formControlName="tema" class="form-control" required />
+                    <label class="form-label" for="tema">Tema</label>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="col-6">
+            <button type="" class="btn btn-success btn-block mb-4 mx-2"><i class="fas fa-check"></i>Agregar</button>
+        </div>
+    </form>
+</div>
+
+
+<div>
+
+    <ul>
+        <li *ngFor="let oferta of lista">
+            cargo: {{oferta.cargo}}
+            tipo_jornada: {{oferta.tipo}}
+            fecha_publicacion: {{oferta.fecha}}
+        </li>
+    </ul>
+</div>
